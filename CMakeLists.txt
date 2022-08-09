@@ -12,6 +12,7 @@ add_definitions(-W -Wall -Wextra
 
 # Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
+  cmake_modules
   descartes_core
   descartes_moveit
   descartes_trajectory
@@ -23,6 +24,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   roslint
   rospy
+  tf
+  tf_conversions
+  eigen_conversions
+  geometry_msgs
 )
 
 # System dependencies are found with CMake's conventions
@@ -46,7 +51,7 @@ catkin_package(
     ${PROJECT_NAME}
   DEPENDS
     Boost
-    EIGEN3
+    Eigen3
 )
 
 ###########
@@ -82,6 +87,7 @@ target_link_libraries(
   ${PROJECT_NAME}
   ${catkin_LIBRARIES}
   ${Boost_LIBRARIES}
+  ${EIGEN3_LIBRARIES}
 )
 
 #############
@@ -133,8 +139,8 @@ install(FILES
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
   find_package(pluginlib REQUIRED)
-  find_package(moveit_resources REQUIRED)
-  include_directories(${moveit_resources_INCLUDE_DIRS})
+  #find_package(moveit_resources REQUIRED)
+  #include_directories(${moveit_resources_INCLUDE_DIRS})
 
   add_rostest_gtest(descartes_path_service_capability_test test/descartes_path_service_capability_test.test test/descartes_path_service_capability_test.cpp)
   target_link_libraries(descartes_path_service_capability_test

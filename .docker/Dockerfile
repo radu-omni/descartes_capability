@@ -32,6 +32,7 @@ RUN git clone https://github.com/radu-omni/descartes_capability.git && \
     wstool update && \
     rm /root/.ssh/id_rsa
 
+RUN apt-get update --fix-missing
 # Note that because we're building on top of melodic-ci, there should not be
 # any deps installed unless something has changed in the source code since the
 # other container was made (they are triggered together so should only be

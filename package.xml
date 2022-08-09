@@ -15,6 +15,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>cmake_modules</depend>
   <depend>descartes_core</depend>
   <depend>descartes_moveit</depend>
   <depend>descartes_trajectory</depend>
@@ -23,6 +24,9 @@
   <depend>moveit_ros_planning</depend>
   <depend>moveit_visual_tools</depend>
   <depend>moveit_ros_move_group</depend>
+  <depend>tf_conversions</depend>
+  <depend>eigen_conversions</depend>
+  <depend>geometry_msgs</depend>
   <depend>roscpp</depend>
   <depend>roslint</depend>
   <depend>rospy</depend>
@@ -31,7 +35,6 @@
   <test_depend version_gte="1.11.2">pluginlib</test_depend>
   <test_depend>rostest</test_depend>
   <test_depend>rosunit</test_depend>
-  <test_depend>moveit_resources</test_depend>
 
   <export>
     <moveit_ros_move_group plugin="${prefix}/descartes_capability_plugin_description.xml"/>
