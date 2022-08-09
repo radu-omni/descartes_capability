@@ -26,7 +26,7 @@ RUN ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 RUN ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
 
 # Download descartes_capability source
-RUN git clone git@github.com:PickNikRobotics/descartes_capability.git && \
+RUN git clone https://github.com/radu-omni/descartes_capability.git && \
     wstool init . && \
     wstool merge ./descartes_capability/descartes_capability.rosinstall && \
     wstool update && \

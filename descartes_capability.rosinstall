@@ -1,7 +1,7 @@
 # Used with wstool.
 - git:
     local-name: descartes_capability
-    uri: https://github.com/PickNikRobotics/descartes_capability.git
+    uri: https://github.com/radu-omni/descartes_capability.git
     version: master
 
 - git:
